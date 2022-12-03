@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+  }
+  
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+body{
+  background-color: palegoldenrod;
+}
+
+h1{
+  margin: 0px;
+  padding: 20px 20px 20px 20px;
+
+  color: red;
+  text-shadow: 5px 5px 5px white;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+button{
+  height: fit-content;
+  width: fit-content;
+
+  padding: 10px;
+  margin: 10px 10px 10px 50px;
+  border: 5px solid whitesmoke;
+
+  background-color: white;
+  color: red;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+
+h2{
+  font-size: 1.75em;
+
+  height: fit-content;
+  width: fit-content;
+
+  padding: 10px;
+  margin: 0px 0px 0px 50px;
+
+  color: red;
+  text-shadow: 5px 5px 5px white;
+}
+
+span{
+  display: block;
+  height: fit-content;
+  width: fit-content;
+  
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  padding: 10px;
+  margin: 10px 0px 10px 75px;
+
+  font-size: 2em;
+}
