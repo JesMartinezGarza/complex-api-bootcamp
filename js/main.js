@@ -58,6 +58,7 @@ function getRandomGenre(){
 
                 document.querySelector('#genre').innerText = 'Genre Name: ' + data.genres[randomIndexForNapster].name
                 document.querySelector('#genreDescription').innerText = 'Genre Description: ' + data.genres[randomIndexForNapster].description
+                document.querySelector('#genreShortcut').innerText = 'Genre Shortcut: ' + data.genres[randomIndexForNapster].shortcut
                 document.querySelector('#genreId').innerText = 'Genre Id: ' + data.genres[randomIndexForNapster].id
 
             })
