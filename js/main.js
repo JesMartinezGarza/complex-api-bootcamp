@@ -8,7 +8,7 @@ function getRandomGenre(){
     fetch('https://musicbrainz.org/ws/2/genre/all?limit=0&offset=0&fmt=json')
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
+        // console.log(data)
     
         let randomIndexOnlyFirstTwentyFive = Math.round(Math.random() * data.genres.length) - 1
 
@@ -21,7 +21,7 @@ function getRandomGenre(){
         // console.log('Genre count: ' + data['genre-count'])
 
         // console.log('Random Index: ' + randomIndexOnlyFirstTwentyFive)
-        console.log('Random Genre: ' + randomGenre)
+        console.log("MusicBrainz's First Genre: " + randomGenre)
 
         document.querySelector('#genreName').innerText = randomGenre + ", " + randomGenresId
 
@@ -38,7 +38,7 @@ function getRandomGenre(){
             let randomGenrePrimeId = data.genres[randomIndexOnlyFirstTwentyFivePrime].id
 
             // console.log('Random Index: ' + randomIndexOnlyFirstTwentyFivePrime)
-            console.log('Random Genre: ' + randomGenrePrime)
+            console.log("MusicBrainz's Second Genre: " + randomGenrePrime)
 
             document.querySelector('#genreNamePrime').innerText = randomGenrePrime + ", " + randomGenrePrimeId
 
@@ -49,17 +49,14 @@ function getRandomGenre(){
             fetch('https://api.napster.com/v2.2/genres?apikey=NWRlNTYzNGEtOGM0NS00MDk1LWIxOWItMmQ4YTE5ZGRlMWI2')
             .then(res => res.json()) // parse response as JSON
             .then(data => {
-                console.log(data.genres)
+                // console.log(data.genres)
                 let randomIndexForNapster = Math.round(data.genres.length * Math.random()) - 1
                 let napsterGenre = data.genres[randomIndexForNapster].name
                 // console.log(data.genres[randomIndexForNapster])
                 // console.log('Genre Name: ' + data.genres[randomIndexForNapster].name)
                 // console.log('Genre Description: ' + data.genres[randomIndexForNapster].description)
-                // console.log('Hello space man!')
-
                 // console.log('Genre Id: ' + data.genres[randomIndexForNapster].id)
-
-
+                console.log('Napster Genre' + napsterGenre)
 
                 document.querySelector('#genre').innerText = 'Genre Name: ' + data.genres[randomIndexForNapster].name
                 document.querySelector('#genreDescription').innerText = 'Genre Description: ' + data.genres[randomIndexForNapster].description
@@ -98,7 +95,7 @@ function getRandomGenre(){
 
 
 
-                    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${randomGenrePrime}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
+                fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${randomGenrePrime}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
                 .then(res => res.json()) // parse response as JSON
                 .then(data => {
                     let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
@@ -172,25 +169,19 @@ function getRandomGenre(){
                 .catch(err => {
                     console.log(`error ${err}`)
                 });
-
-
             })
+
             .catch(err => {
                 console.log(`error ${err}`)
             });
-
-
         })
+
         .catch(err => {
             console.log(`error ${err}`)
         });
-    
-
     })
 
     .catch(err => {
         console.log(`error ${err}`)
     });
-
-
 }
