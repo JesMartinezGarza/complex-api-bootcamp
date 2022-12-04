@@ -79,9 +79,6 @@ function getRandomGenre(){
 
                     // console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
 
-
-                    document.querySelector('#genreResponse').innerText = `Genre: ${randomGenre}`
-
                     document.querySelector('#thumbnail').src = data.items[randomIndexForYouTube].snippet.thumbnails.medium.url
                     document.querySelector('#thumbnail').removeAttribute('class')
 
@@ -109,8 +106,6 @@ function getRandomGenre(){
                     // console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
 
                     // console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
-
-                    document.querySelector('#genreGenrePrimeResponse').innerText = `Genre: ${randomGenrePrime}`
 
                     document.querySelector('#thumbnailGenrePrimeResponse').src = data.items[randomIndexForYouTube].snippet.thumbnails.medium.url
                     document.querySelector('#thumbnailGenrePrimeResponse').removeAttribute('class')
