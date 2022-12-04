@@ -63,3 +63,18 @@ span{
 
   font-size: 2em;
 }
+
+a{
+  display: block;
+  height: fit-content;
+  width: fit-content;
+  
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  padding: 10px;
+  margin: 10px 0px 10px 75px;
+
+  font-size: 2em;
+}

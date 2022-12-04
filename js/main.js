@@ -88,6 +88,9 @@ function getRandomGenre(){
 
                     document.querySelector('#videoLink').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
+                    document.querySelector('#videoTitleMB').innerText = data.items[randomIndexForYouTube].snippet.title
+                    document.querySelector('#videoDescriptionMB').innerText = data.items[randomIndexForYouTube].snippet.description
+                    document.querySelector('#videoChannelMB').innerText = data.items[randomIndexForYouTube].snippet.channelTitle
 
 
 
@@ -113,6 +116,10 @@ function getRandomGenre(){
                     document.querySelector('#videoLinkGenrePrimeResponse').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
 
+                    document.querySelector('#videoTitleMBP').innerText = data.items[randomIndexForYouTube].snippet.title
+                    document.querySelector('#videoDescriptionMBP').innerText = data.items[randomIndexForYouTube].snippet.description
+                    document.querySelector('#videoChannelMBP').innerText = data.items[randomIndexForYouTube].snippet.channelTitle
+
                     fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${napsterGenre}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
                     .then(res => res.json()) // parse response as JSON
                     .then(data => {
@@ -135,6 +142,9 @@ function getRandomGenre(){
                         document.querySelector('#videoLinkNapsterResponse').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
     
     
+                        document.querySelector('#videoTitle').innerText = data.items[randomIndexForYouTube].snippet.title
+                        document.querySelector('#videoDescription').innerText = data.items[randomIndexForYouTube].snippet.description
+                        document.querySelector('#videoChannel').innerText = data.items[randomIndexForYouTube].snippet.channelTitle
     
                         
                     })
