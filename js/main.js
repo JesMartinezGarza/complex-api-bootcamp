@@ -56,7 +56,7 @@ function getRandomGenre(){
                 // console.log('Genre Name: ' + data.genres[randomIndexForNapster].name)
                 // console.log('Genre Description: ' + data.genres[randomIndexForNapster].description)
                 // console.log('Genre Id: ' + data.genres[randomIndexForNapster].id)
-                console.log('Napster Genre' + napsterGenre)
+                console.log('Napster Genre: ' + napsterGenre)
 
                 document.querySelector('#genre').innerText = 'Genre Name: ' + data.genres[randomIndexForNapster].name
                 document.querySelector('#genreDescription').innerText = 'Genre Description: ' + data.genres[randomIndexForNapster].description
