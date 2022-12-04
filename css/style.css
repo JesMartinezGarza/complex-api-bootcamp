@@ -1,10 +1,23 @@
 *{
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
+
+body{
+  margin: 75px;
+}
   
 img{
   display: block;
-  margin: 0 auto;
+  margin: 10px 50px;
+
+  height: 400px;
+  width: auto;
+
+  border: 5px solid black;
+}
+
+.hidden{
+  display: none;
 }
 
 body{
@@ -19,6 +32,17 @@ h1{
   text-shadow: 5px 5px 5px white;
   font-weight: bold;
   font-size: 2.5em;
+}
+
+h4{
+  margin: 0px;
+  padding: 5px 20px 15px 25px;
+
+  color: black;
+  text-shadow: 2px 2px 2px white;
+  text-shadow: 5px 5px 5px white;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 button{

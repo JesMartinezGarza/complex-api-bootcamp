@@ -18,9 +18,9 @@ function getRandomGenre(){
         let randomGenresId = data.genres[randomIndexOnlyFirstTwentyFive].id
 
 
-        console.log('Genre count: ' + data['genre-count'])
+        // console.log('Genre count: ' + data['genre-count'])
 
-        console.log('Random Index: ' + randomIndexOnlyFirstTwentyFive)
+        // console.log('Random Index: ' + randomIndexOnlyFirstTwentyFive)
         console.log('Random Genre: ' + randomGenre)
 
         document.querySelector('#genreName').innerText = randomGenre + ", " + randomGenresId
@@ -31,13 +31,13 @@ function getRandomGenre(){
         fetch(`https://musicbrainz.org/ws/2/genre/all?limit=0&offset=${randomIndexAllList}&fmt=json`)
         .then(res => res.json()) // parse response as JSON
         .then(data => {
-            console.log(data)
+            // console.log(data)
 
             let randomIndexOnlyFirstTwentyFivePrime = Math.round(Math.random() * data.genres.length) - 1
             let randomGenrePrime = data.genres[randomIndexOnlyFirstTwentyFivePrime].name
             let randomGenrePrimeId = data.genres[randomIndexOnlyFirstTwentyFivePrime].id
 
-            console.log('Random Index: ' + randomIndexOnlyFirstTwentyFivePrime)
+            // console.log('Random Index: ' + randomIndexOnlyFirstTwentyFivePrime)
             console.log('Random Genre: ' + randomGenrePrime)
 
             document.querySelector('#genreNamePrime').innerText = randomGenrePrime + ", " + randomGenrePrimeId
@@ -52,12 +52,12 @@ function getRandomGenre(){
                 console.log(data.genres)
                 let randomIndexForNapster = Math.round(data.genres.length * Math.random()) - 1
                 let napsterGenre = data.genres[randomIndexForNapster].name
-                console.log(data.genres[randomIndexForNapster])
-                console.log('Genre Name: ' + data.genres[randomIndexForNapster].name)
-                console.log('Genre Description: ' + data.genres[randomIndexForNapster].description)
-                console.log('Hello space man!')
+                // console.log(data.genres[randomIndexForNapster])
+                // console.log('Genre Name: ' + data.genres[randomIndexForNapster].name)
+                // console.log('Genre Description: ' + data.genres[randomIndexForNapster].description)
+                // console.log('Hello space man!')
 
-                console.log('Genre Id: ' + data.genres[randomIndexForNapster].id)
+                // console.log('Genre Id: ' + data.genres[randomIndexForNapster].id)
 
 
 
@@ -71,18 +71,22 @@ function getRandomGenre(){
                 .then(res => res.json()) // parse response as JSON
                 .then(data => {
                     let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
-                    console.log(data)
-                    console.log(data.items)
-                    console.log(data.items[randomIndexForYouTube])
-                    console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
-                    console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
-                    console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
-                    console.log('Title: ' + data.items[randomIndexForYouTube].snippet.title)
-                    console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
+                    // console.log(data)
+                    // console.log(data.items)
+                    // console.log(data.items[randomIndexForYouTube])
+                    // console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
+                    // console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
+                    // console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
+                    // console.log('Title: ' + data.items[randomIndexForYouTube].snippet.title)
+                    // console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
 
-                    console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
+                    // console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
+
+
+                    document.querySelector('#genreResponse').innerText = `Genre: ${randomGenre}`
 
                     document.querySelector('#thumbnail').src = data.items[randomIndexForYouTube].snippet.thumbnails.medium.url
+                    document.querySelector('#thumbnail').removeAttribute('class')
 
                     document.querySelector('#videoLink').innerText = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
@@ -98,18 +102,22 @@ function getRandomGenre(){
                 .then(res => res.json()) // parse response as JSON
                 .then(data => {
                     let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
-                    console.log(data)
-                    console.log(data.items)
-                    console.log(data.items[randomIndexForYouTube])
-                    console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
-                    console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
-                    console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
-                    console.log('Title: ' + data.items[randomIndexForYouTube].snippet.title)
-                    console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
+                    // console.log(data)
+                    // console.log(data.items)
+                    // console.log(data.items[randomIndexForYouTube])
+                    // console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
+                    // console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
+                    // console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
+                    // console.log('Title: ' + data.items[randomIndexForYouTube].snippet.title)
+                    // console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
 
-                    console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
+                    // console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
+
+                    document.querySelector('#genreGenrePrimeResponse').innerText = `Genre: ${randomGenrePrime}`
 
                     document.querySelector('#thumbnailGenrePrimeResponse').src = data.items[randomIndexForYouTube].snippet.thumbnails.medium.url
+                    document.querySelector('#thumbnailGenrePrimeResponse').removeAttribute('class')
+
 
                     document.querySelector('#videoLinkGenrePrimeResponse').innerText = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
@@ -124,18 +132,20 @@ function getRandomGenre(){
                     .then(res => res.json()) // parse response as JSON
                     .then(data => {
                         let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
-                        console.log(data)
-                        console.log(data.items)
-                        console.log(data.items[randomIndexForYouTube])
-                        console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
-                        console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
-                        console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
-                        console.log('Title: ' + data.items[randomIndexForYouTube].snippet.title)
-                        console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
+                        // console.log(data)
+                        // console.log(data.items)
+                        // console.log(data.items[randomIndexForYouTube])
+                        // console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
+                        // console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
+                        // console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
+                        // console.log('Title: ' + data.items[randomIndexForYouTube].snippet.title)
+                        // console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
     
-                        console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
+                        // console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
     
                         document.querySelector('#thumbnailNapsterResponse').src = data.items[randomIndexForYouTube].snippet.thumbnails.medium.url
+                        document.querySelector('#thumbnailNapsterResponse').removeAttribute('class')
+
     
                         document.querySelector('#videoLinkNapsterResponse').innerText = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
     
