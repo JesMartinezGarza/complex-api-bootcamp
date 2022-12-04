@@ -61,6 +61,39 @@ function getRandomGenre(){
                 document.querySelector('#genreShortcut').innerText = 'Genre Shortcut: ' + data.genres[randomIndexForNapster].shortcut
                 document.querySelector('#genreId').innerText = 'Genre Id: ' + data.genres[randomIndexForNapster].id
 
+
+                fetch(`http://api.napster.com/v2.2/genres/${randomGenrePrime}?apikey=NWRlNTYzNGEtOGM0NS00MDk1LWIxOWItMmQ4YTE5ZGRlMWI2`)
+                .then(res => res.json()) // parse response as JSON
+                .then(data => {
+                    console.log(data)
+                    console.log(`http://api.napster.com/v2.2/genres/${randomGenre}?apikey=NWRlNTYzNGEtOGM0NS00MDk1LWIxOWItMmQ4YTE5ZGRlMWI2`)
+
+
+
+
+
+
+
+                    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${randomGenrePrime}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
+                    .then(res => res.json()) // parse response as JSON
+                    .then(data => {
+                        console.log(data)
+                        
+                    })
+                    .catch(err => {
+                        console.log(`error ${err}`)
+                    });
+
+
+                })
+                .catch(err => {
+                    console.log(`error ${err}`)
+                });
+
+
+
+
+
             })
             .catch(err => {
                 console.log(`error ${err}`)
