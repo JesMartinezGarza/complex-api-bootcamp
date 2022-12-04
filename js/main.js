@@ -23,7 +23,7 @@ function getRandomGenre(){
         // console.log('Random Index: ' + randomIndexOnlyFirstTwentyFive)
         console.log("MusicBrainz's First Genre: " + randomGenre)
 
-        document.querySelector('#genreName').innerText = randomGenre + ", " + randomGenresId
+        document.querySelector('#genreName').innerText = "Genre: " + randomGenre + ", Genre Id: " + randomGenresId
 
 
 
@@ -40,7 +40,7 @@ function getRandomGenre(){
             // console.log('Random Index: ' + randomIndexOnlyFirstTwentyFivePrime)
             console.log("MusicBrainz's Second Genre: " + randomGenrePrime)
 
-            document.querySelector('#genreNamePrime').innerText = randomGenrePrime + ", " + randomGenrePrimeId
+            document.querySelector('#genreNamePrime').innerText = "Genre: " + randomGenrePrime + ", Genre Id: " + randomGenrePrimeId
 
 
 
@@ -85,13 +85,13 @@ function getRandomGenre(){
                     document.querySelector('#thumbnail').src = data.items[randomIndexForYouTube].snippet.thumbnails.medium.url
                     document.querySelector('#thumbnail').removeAttribute('class')
 
-                    document.querySelector('#videoLink').innerText = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
+                    document.querySelector('#videoLink').innerText = `Video Link: https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
                     document.querySelector('#videoLink').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
-                    document.querySelector('#videoTitleMB').innerText = data.items[randomIndexForYouTube].snippet.title
-                    document.querySelector('#videoDescriptionMB').innerText = data.items[randomIndexForYouTube].snippet.description
-                    document.querySelector('#videoChannelMB').innerText = data.items[randomIndexForYouTube].snippet.channelTitle
+                    document.querySelector('#videoTitleMB').innerText = `Video Title: ${data.items[randomIndexForYouTube].snippet.title}`
+                    document.querySelector('#videoDescriptionMB').innerText = `Video Description: ${data.items[randomIndexForYouTube].snippet.description}`
+                    document.querySelector('#videoChannelMB').innerText = `YouTube Channel Name: ${data.items[randomIndexForYouTube].snippet.channelTitle}`
 
 
 
@@ -116,14 +116,14 @@ function getRandomGenre(){
                     document.querySelector('#thumbnailGenrePrimeResponse').removeAttribute('class')
 
 
-                    document.querySelector('#videoLinkGenrePrimeResponse').innerText = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
+                    document.querySelector('#videoLinkGenrePrimeResponse').innerText = `Video Link: https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
                     document.querySelector('#videoLinkGenrePrimeResponse').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
 
-                    document.querySelector('#videoTitleMBP').innerText = data.items[randomIndexForYouTube].snippet.title
-                    document.querySelector('#videoDescriptionMBP').innerText = data.items[randomIndexForYouTube].snippet.description
-                    document.querySelector('#videoChannelMBP').innerText = data.items[randomIndexForYouTube].snippet.channelTitle
+                    document.querySelector('#videoTitleMBP').innerText = `Video Title: ${data.items[randomIndexForYouTube].snippet.title}`
+                    document.querySelector('#videoDescriptionMBP').innerText = `Video Description: ${data.items[randomIndexForYouTube].snippet.description}`
+                    document.querySelector('#videoChannelMBP').innerText = `YouTube Channel Name: ${data.items[randomIndexForYouTube].snippet.channelTitle}`
 
                     fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${napsterGenre}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
                     .then(res => res.json()) // parse response as JSON
@@ -144,14 +144,14 @@ function getRandomGenre(){
                         document.querySelector('#thumbnailNapsterResponse').removeAttribute('class')
 
     
-                        document.querySelector('#videoLinkNapsterResponse').innerText = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
+                        document.querySelector('#videoLinkNapsterResponse').innerText = `Video Link: https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
     
                         document.querySelector('#videoLinkNapsterResponse').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
     
     
-                        document.querySelector('#videoTitle').innerText = data.items[randomIndexForYouTube].snippet.title
-                        document.querySelector('#videoDescription').innerText = data.items[randomIndexForYouTube].snippet.description
-                        document.querySelector('#videoChannel').innerText = data.items[randomIndexForYouTube].snippet.channelTitle
+                        document.querySelector('#videoTitle').innerText = `Video Title: ${data.items[randomIndexForYouTube].snippet.title}`
+                        document.querySelector('#videoDescription').innerText = `Video Description: ${data.items[randomIndexForYouTube].snippet.description}`
+                        document.querySelector('#videoChannel').innerText = `YouTube Channel Name: ${data.items[randomIndexForYouTube].snippet.channelTitle}`
     
                         
                     })
