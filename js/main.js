@@ -69,7 +69,26 @@ function getRandomGenre(){
                 fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${randomGenre}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
                 .then(res => res.json()) // parse response as JSON
                 .then(data => {
+                    let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
                     console.log(data)
+                    console.log(data.items)
+                    console.log(data.items[randomIndexForYouTube])
+                    console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
+                    console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
+                    console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
+                    console.log('Title: ' + data.items[randomIndexForYouTube].snippet.title)
+                    console.log('Thumbnail url: ' + data.items[randomIndexForYouTube].snippet.thumbnails.medium.url)
+
+                    console.log(`https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`)
+
+                    document.querySelector('#thumbnail').src = data.items[randomIndexForYouTube].snippet.thumbnails.medium.url
+
+                    document.querySelector('#videoLink').innerText = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
+
+                    document.querySelector('#videoLink').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
+
+
+
                     
                 })
                 .catch(err => {
