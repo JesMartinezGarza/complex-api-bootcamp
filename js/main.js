@@ -54,7 +54,11 @@ function getRandomGenre(){
                 console.log(data.genres[randomIndexForNapster])
                 console.log('Genre Name: ' + data.genres[randomIndexForNapster].name)
                 console.log('Genre Description: ' + data.genres[randomIndexForNapster].description)
+                console.log('Hello space man!')
+
                 console.log('Genre Id: ' + data.genres[randomIndexForNapster].id)
+
+
 
                 document.querySelector('#genre').innerText = 'Genre Name: ' + data.genres[randomIndexForNapster].name
                 document.querySelector('#genreDescription').innerText = 'Genre Description: ' + data.genres[randomIndexForNapster].description
@@ -62,29 +66,11 @@ function getRandomGenre(){
                 document.querySelector('#genreId').innerText = 'Genre Id: ' + data.genres[randomIndexForNapster].id
 
 
-                fetch(`http://api.napster.com/v2.2/genres/${randomGenrePrime}?apikey=NWRlNTYzNGEtOGM0NS00MDk1LWIxOWItMmQ4YTE5ZGRlMWI2`)
+                fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${randomGenre}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
                 .then(res => res.json()) // parse response as JSON
                 .then(data => {
                     console.log(data)
-                    console.log(`http://api.napster.com/v2.2/genres/${randomGenre}?apikey=NWRlNTYzNGEtOGM0NS00MDk1LWIxOWItMmQ4YTE5ZGRlMWI2`)
-
-
-
-
-
-
-
-                    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${randomGenrePrime}&key=AIzaSyC1gX2sqjNqKVaDNi4shmU8GhH1VQS8zRQ`)
-                    .then(res => res.json()) // parse response as JSON
-                    .then(data => {
-                        console.log(data)
-                        
-                    })
-                    .catch(err => {
-                        console.log(`error ${err}`)
-                    });
-
-
+                    
                 })
                 .catch(err => {
                     console.log(`error ${err}`)
