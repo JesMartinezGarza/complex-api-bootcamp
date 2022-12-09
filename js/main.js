@@ -70,7 +70,7 @@ function getRandomGenre(){
                     let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
                     // console.log(data)
                     // console.log(data.items)
-                    // console.log(data.items[randomIndexForYouTube])
+                    console.log(data.items[randomIndexForYouTube])
                     // console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
                     // console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
                     // console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
@@ -85,7 +85,6 @@ function getRandomGenre(){
                     document.querySelector('#videoLink').innerText = `Video Link: https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
 
                     document.querySelector('#videoLink').href = `https://www.youtube.com/watch?v=${data.items[randomIndexForYouTube].id.videoId}`
-
                     document.querySelector('#videoTitleMB').innerText = `Video Title: ${data.items[randomIndexForYouTube].snippet.title}`
                     document.querySelector('#videoDescriptionMB').innerText = `Video Description: ${data.items[randomIndexForYouTube].snippet.description}`
                     document.querySelector('#videoChannelMB').innerText = `YouTube Channel Name: ${data.items[randomIndexForYouTube].snippet.channelTitle}`
@@ -98,7 +97,7 @@ function getRandomGenre(){
                     let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
                     // console.log(data)
                     // console.log(data.items)
-                    // console.log(data.items[randomIndexForYouTube])
+                    console.log(data.items[randomIndexForYouTube])
                     // console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
                     // console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
                     // console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
@@ -126,7 +125,7 @@ function getRandomGenre(){
                         let randomIndexForYouTube = Math.round(Math.random() * 25) - 1
                         // console.log(data)
                         // console.log(data.items)
-                        // console.log(data.items[randomIndexForYouTube])
+                        console.log(data.items[randomIndexForYouTube])
                         // console.log('Video Id: ' + data.items[randomIndexForYouTube].id.videoId)
                         // console.log('Channel Title: ' + data.items[randomIndexForYouTube].snippet.channelTitle)
                         // console.log('Description: ' + data.items[randomIndexForYouTube].snippet.description)
